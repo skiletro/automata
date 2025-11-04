@@ -1,1 +1,1 @@
-![automata](./screenshot.webp automata)
+![automata](./screenshot.webp "automata")
