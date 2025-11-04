@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://mx7depcinomx"]
+
+[ext_resource type="Script" uid="uid://dbiksvkl8lwe1" path="res://assets/script.gd" id="1_nxogm"]
+[ext_resource type="Texture2D" uid="uid://dgpbo64tm148q" path="res://assets/colours.bmp" id="2_nxogm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxogm"]
+texture = ExtResource("2_nxogm")
+texture_region_size = Vector2i(1, 1)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3253y"]
+tile_size = Vector2i(1, 1)
+sources/0 = SubResource("TileSetAtlasSource_nxogm")
+
+[node name="Scene" type="Node2D"]
+script = ExtResource("1_nxogm")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_3253y")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
